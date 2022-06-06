@@ -1,0 +1,156 @@
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 30px;
+  height: 100vh;
+}
+
+/* Navbar styling */
+.navbar {
+  margin: 10px 0;
+  padding: 5px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul > li {
+  padding-right: 25px;
+}
+
+.navbar ul li > a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar ul li > a:active {
+  color: rgb(97, 97, 182);
+}
+
+.navbar ul .logo {
+  margin-right: auto;
+}
+
+/* Date Section  */
+.date p {
+  text-align: right;
+}
+
+/* Heading-section */
+.main-heading {
+  text-align: center;
+  margin: 10px;
+}
+
+/* Form section */
+
+form {
+  display: grid;
+  place-items: center;
+  margin-top: 50px;
+}
+
+form h3 {
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: lighter;
+}
+
+form > input {
+  padding: 10px;
+  border: 1px solid rgb(172, 168, 168);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+form > input::placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+}
+
+form button {
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+/* Contact information section */
+
+.contact {
+  display: grid;
+  place-items: center;
+  margin-top: 80px;
+}
+
+.contact h2 {
+  padding-bottom: 30px;
+}
+
+.contact p {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* Footer-section */
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  border: 2px solid #000;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+/* logged-books Section */
+
+.logged-books {
+  width: 50%;
+  border: 3px solid #000;
+  margin: auto;
+}
+
+.logged-books > .card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  height: 2em;
+}
+
+.card > button {
+  margin-right: 10px;
+}
+
+.card > p {
+  padding-left: 10px;
+}
+
+.logged-books > div {
+  background-color: #eee;
+}
+
+.logged-books > div:nth-child(odd) {
+  background-color: #ddd;
+}
+
+/* Add hide class to hide the content  */
+
+.hide {
+  display: none;
+}
