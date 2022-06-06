@@ -1,3 +1,5 @@
+import removeBook from './remove.js'
+
 let books = [];
 const loggedBooks = document.querySelector('.logged-books');
 
@@ -14,6 +16,13 @@ function showBook() {
     // Reset the values to null to allow the user to input again
     title.value = '';
     author.value = '';
+  }
+}
+
+// New intro
+window.onload = () => {
+  if (localStorage.getItem('books')) {
+    books = JSON.parse(localStorage.getItem('books'));
   }
 }
 

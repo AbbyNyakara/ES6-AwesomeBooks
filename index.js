@@ -3,7 +3,7 @@
 // Import modules
 import showBook from "./modules/Showbooks.js";
 import removeBook from "./modules/remove.js";
-
+import { DateTime } from "./modules/luxon.js"  // working 
 
 // Define constants
 const title = document.querySelector('.title-input');
@@ -20,7 +20,7 @@ const bookLink = document.querySelector('nav ul li .book-link');
 const formLink = document.querySelector('nav ul li .form-link');
 const contactLink = document.querySelector('nav ul li .contact-link');
 
-let books = [];
+// let books = [];
 
 // function showBook() {
 //   loggedBooks.innerHTML = '';
@@ -46,13 +46,13 @@ let books = [];
 //   localStorage.setItem('books', JSON.stringify(books));
 // }
 
-window.onload = () => {
-  if (localStorage.getItem('books')) {
-    books = JSON.parse(localStorage.getItem('books'));
-  }
+// window.onload = () => {
+//   if (localStorage.getItem('books')) {
+//     books = JSON.parse(localStorage.getItem('books'));
+//   }
 
-  showBook();
-};
+//   showBook();
+// };
 
 addButton.addEventListener('click', () => {
   const book = {
@@ -64,30 +64,19 @@ addButton.addEventListener('click', () => {
   localStorage.setItem('books', JSON.stringify(books));
 });
 
-// date module
-
-const today = new Date().toLocaleDateString('en-us', {
-  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-});
-
-currentDate.innerHTML = `
-  <p>${today}</p>
-`;
-
 // Add Event listeners for one page website
 
 formLink.addEventListener('click', () => {
   loggedBooks.style.display = 'none';
   form.style.display = 'grid';
   contact.style.display = 'none';
-  // pageHeading.innerHTML = 'Add book';
 });
 
 bookLink.addEventListener('click', () => {
   loggedBooks.classList.remove('hide');
   form.style.display = 'none';
   loggedBooks.style.display = 'block';
-  // pageHeading.innerHTML = 'Display all books';
+  contact.style.display = 'none';
 });
 
 contactLink.addEventListener('click', () => {
@@ -95,5 +84,12 @@ contactLink.addEventListener('click', () => {
   contact.classList.remove('hide');
   form.style.display = 'none';
   loggedBooks.style.display = 'none';
-  // pageHeading.innerHTML = 'Contact Information';
 });
+
+// Populate the date using the luxon library
+
+let today = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+
+currentDate.innerHTML = `
+  <p>${today}</p>
+`;
