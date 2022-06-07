@@ -1,93 +1,20 @@
 /* eslint-disable no-unused-vars */
 
 // Import modules
-import showBook from "./modules/Showbooks.js";
-import removeBook from "./modules/remove.js";
-import { DateTime } from "./modules/luxon.js"  // working 
+import activateBooks from "./modules/Showbooks.js";
+import { DateTime } from "./modules/luxon.js"
+import displayPages from "./modules/displaypage.js";
 
-// Define constants
-const title = document.querySelector('.title-input');
-const author = document.querySelector('.author-input');
-const loggedBooks = document.querySelector('.logged-books');
-const addButton = document.querySelector('.add-book');
-const contact = document.querySelector('.contact');
-const form = document.querySelector('form');
+// Define constants 
 const currentDate = document.querySelector('.date');
-const pageHeading = document.querySelector('main-heading');
 
-// Select the Links to the pages
-const bookLink = document.querySelector('nav ul li .book-link');
-const formLink = document.querySelector('nav ul li .form-link');
-const contactLink = document.querySelector('nav ul li .contact-link');
+// To add and delete the books;
+activateBooks();
 
-// let books = [];
-
-// function showBook() {
-//   loggedBooks.innerHTML = '';
-//   for (let i = 0; i < books.length; i += 1) {
-//     loggedBooks.innerHTML += `
-//         <div class="card">
-//             <p class="title">${books[i].title} by ${books[i].author}</p>
-//             <button class="button" onclick="removeBook(${i})">Remove</button>
-//         </div>
-//    `;
-
-//     // Reset the values to null to allow the user to input again
-//     title.value = '';
-//     author.value = '';
-//   }
-// }
-
-
-// Remove book
-// function removeBook(index) {
-//   books.splice(index, 1);
-//   showBook();
-//   localStorage.setItem('books', JSON.stringify(books));
-// }
-
-// window.onload = () => {
-//   if (localStorage.getItem('books')) {
-//     books = JSON.parse(localStorage.getItem('books'));
-//   }
-
-//   showBook();
-// };
-
-addButton.addEventListener('click', () => {
-  const book = {
-    title: title.value,
-    author: author.value,
-  };
-  books.push(book);
-  showBook();
-  localStorage.setItem('books', JSON.stringify(books));
-});
-
-// Add Event listeners for one page website
-
-formLink.addEventListener('click', () => {
-  loggedBooks.style.display = 'none';
-  form.style.display = 'grid';
-  contact.style.display = 'none';
-});
-
-bookLink.addEventListener('click', () => {
-  loggedBooks.classList.remove('hide');
-  form.style.display = 'none';
-  loggedBooks.style.display = 'block';
-  contact.style.display = 'none';
-});
-
-contactLink.addEventListener('click', () => {
-  contact.style.display = 'grid';
-  contact.classList.remove('hide');
-  form.style.display = 'none';
-  loggedBooks.style.display = 'none';
-});
+// Create responsive one page website 
+displayPages();
 
 // Populate the date using the luxon library
-
 let today = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 
 currentDate.innerHTML = `
