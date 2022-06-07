@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 const title = document.querySelector('.title-input');
 const author = document.querySelector('.author-input');
 const loggedBooks = document.querySelector('.logged-books');
@@ -25,11 +27,11 @@ const activateBooks = () => {
   }
 
   // Remove book
-  let removeBook = (index) => {
+  const removeBook = (index) => {
     books.splice(index, 1);
     showBook();
     localStorage.setItem('books', JSON.stringify(books));
-  }
+  };
 
   window.onload = () => {
     if (localStorage.getItem('books')) {
