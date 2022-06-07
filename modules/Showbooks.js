@@ -7,49 +7,48 @@ const form = document.querySelector('form');
 
 let books = [];
 
-let activateBooks = () => {
-    function showBook () {
-      loggedBooks.innerHTML = '';
-      for (let i = 0; i < books.length; i += 1) {
-        loggedBooks.innerHTML += `
-            <div class="card">
-                <p class="title">${books[i].title} by ${books[i].author}</p>
-                <button class="button" onclick="removeBook(${i})">Remove</button>
-            </div>
-      `;
+const activateBooks = () => {
+  function showBook() {
+    loggedBooks.innerHTML = '';
+    for (let i = 0; i < books.length; i += 1) {
+      loggedBooks.innerHTML += `
+          <div class="card">
+              <p class="title">${books[i].title} by ${books[i].author}</p>
+              <button class="button" onclick="removeBook(${i})">Remove</button>
+          </div>
+    `;
 
-        // Reset the values to null to allow the user to input again
-        title.value = '';
-        author.value = '';
-      }
+      // Reset the values to null to allow the user to input again
+      title.value = '';
+      author.value = '';
+    }
+  }
+
+  // Remove book
+  let removeBook = (index) => {
+    books.splice(index, 1);
+    showBook();
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  window.onload = () => {
+    if (localStorage.getItem('books')) {
+      books = JSON.parse(localStorage.getItem('books'));
     }
 
+    showBook();
+  };
 
-    // Remove book
-    let removeBook = (index) => {
-      books.splice(index, 1);
-      showBook();
-      localStorage.setItem('books', JSON.stringify(books));
-    }
-
-    window.onload = () => {
-      if (localStorage.getItem('books')) {
-        books = JSON.parse(localStorage.getItem('books'));
-      }
-
-      showBook();
+  addButton.addEventListener('click', () => {
+    const book = {
+      title: title.value,
+      author: author.value,
     };
-
-    addButton.addEventListener('click', () => {
-      const book = {
-        title: title.value,
-        author: author.value,
-      };
-      books.push(book);
-      showBook();
-      localStorage.setItem('books', JSON.stringify(books));
-    });
-}
+    books.push(book);
+    showBook();
+    localStorage.setItem('books', JSON.stringify(books));
+  });
+};
 
 export default activateBooks;
-export {loggedBooks, contact, form};
+export { loggedBooks, contact, form };
