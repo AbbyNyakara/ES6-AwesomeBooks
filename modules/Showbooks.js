@@ -4,8 +4,6 @@ const loggedBooks = document.querySelector('.logged-books');
 const addButton = document.querySelector('.add-book');
 const contact = document.querySelector('.contact');
 const form = document.querySelector('form');
-const currentDate = document.querySelector('.date');
-const pageHeading = document.querySelector('main-heading');
 
 let books = [];
 
