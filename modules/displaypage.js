@@ -1,4 +1,4 @@
-import BookClass from "./bookClass.js";
+import BookClass from './bookClass.js';
 
 const title = document.querySelector('.title_input');
 const author = document.querySelector('.author_input');
