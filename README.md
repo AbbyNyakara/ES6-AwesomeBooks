@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Awesome Books Project
+# Awesome Books Project-ES6
 
-> A one page complete navigation website project to add and delete books from a website dynamically 
+> A one page complete navigation website project to add and delete books from a website dynamically using Javascript ES6 to refactor the code into moodules.
 
 
 ## Built With
