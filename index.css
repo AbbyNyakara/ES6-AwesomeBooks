@@ -1,155 +1,163 @@
 * {
-  margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  margin: 0;
+  font-size: 102%;
+  font-family: 'McLaren', cursive;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  padding: 30px;
-  height: 100vh;
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-/* Navbar styling */
-.navbar {
-  margin: 10px 0;
-  padding: 5px;
-  border: 2px solid #000;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.navbar ul {
+.nav-container {
+  background-color: #fff;
   display: flex;
   list-style: none;
+  gap: 2rem;
+  justify-content: flex-end;
+  padding: 1.2rem 4rem;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
 }
 
-.navbar ul > li {
-  padding-right: 25px;
-}
-
-.navbar ul li > a {
+.nav {
   text-decoration: none;
-  color: #000;
+  color: rgb(0, 0, 0);
+  font-size: 1.4rem;
+  transition: all 0.4s;
+  padding: 0.2rem 1rem;
 }
 
-.navbar ul li > a:active {
-  color: rgb(97, 97, 182);
+.nav:hover,
+.nav:active {
+  background-color: #535353;
+  color: white;
+  box-shadow: 3px 3px #888;
 }
 
-.navbar ul .logo {
+.logo-container {
   margin-right: auto;
 }
 
-/* Date Section  */
-.date p {
+.date {
   text-align: right;
+  padding: 2rem 4rem;
+  margin-top: 5rem;
 }
 
-/* Heading-section */
-.main-heading {
-  text-align: center;
-  margin: 10px;
-}
-
-/* Form section */
-
-form {
-  display: grid;
-  place-items: center;
-  margin-top: 50px;
-}
-
-form h3 {
-  font-size: 25px;
-  margin-bottom: 30px;
-  font-weight: lighter;
-}
-
-form > input {
-  padding: 10px;
-  border: 1px solid rgb(172, 168, 168);
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-form > input::placeholder {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2em;
-}
-
-form button {
-  padding: 10px;
-  font-family: 'Montserrat', sans-serif;
-  border: 2px solid #000;
-  border-radius: 5px;
-}
-
-/* Contact information section */
-
-.contact {
-  display: grid;
-  place-items: center;
-  margin-top: 80px;
-}
-
-.contact h2 {
-  padding-bottom: 30px;
-}
-
-.contact p {
-  padding-bottom: 20px;
+.heading {
+  font-size: 2rem;
   text-align: center;
 }
 
-/* Footer-section */
+.line {
+  width: 20%;
+  border: 1px solid black;
+}
 
-footer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-  position: absolute;
-  bottom: 0;
-  width: 95%;
-  border: 2px solid #000;
-  padding: 7px;
+.add-form {
+  display: none;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+
+.title_input,
+.author_input {
+  width: 20%;
+  font-size: 1rem;
+  border: 2px solid rgb(143, 138, 138);
+  margin: 1rem 0;
+  padding: 0.5rem;
   border-radius: 5px;
 }
 
-/* logged-books Section */
+.add-book {
+  font-size: 1rem;
+  margin-left: 17rem;
+  border: 2px solid rgb(77, 77, 77);
+  padding: 0.5rem 1rem;
+  transition: all 0.4s;
+}
 
-.logged-books {
-  width: 50%;
-  border: 3px solid #000;
+.add-book:hover,
+.add-book:active {
+  background-color: #535353;
+  color: white;
+}
+
+.registered-books {
+  border: 2px solid black;
+}
+
+.container {
+  width: 70%;
   margin: auto;
-}
-
-.logged-books > .card {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  height: 2em;
+  padding: 0.5rem;
 }
 
-.card > button {
-  margin-right: 10px;
+.container0 {
+  background: rgba(119, 118, 118, 0.466);
 }
 
-.card > p {
-  padding-left: 10px;
+.container1 {
+  background: rgb(139, 137, 137);
 }
 
-.logged-books > div {
-  background-color: #eee;
+.title {
+  margin: 0.4rem;
 }
 
-.logged-books > div:nth-child(odd) {
-  background-color: #ddd;
+.button {
+  font-size: 1rem;
+  border: 2px solid rgb(77, 77, 77);
+  padding: 0.5rem 1rem;
+  box-shadow: 5px 5px #ddd;
+  transition: all 0.4s;
 }
 
-/* Add hide class to hide the content  */
+.button:hover,
+.button:active {
+  background-color: #535353;
+  color: white;
+  box-shadow: 3px 3px #888;
+}
 
-.hide {
+.container:nth-child(odd) {
+  background-color: rgb(221, 221, 221);
+}
+
+.contact-info {
+  width: 75%;
+  margin-inline: auto;
+  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   display: none;
+}
+
+.contact-info h3 {
+  margin-top: 0.5rem;
+}
+
+.contact-info-container {
+  margin-top: 1rem;
+  margin-left: 4rem;
+}
+
+.info-item {
+  padding: 0.2rem;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: rgb(221, 221, 221);
+  padding: 1rem 5rem;
+  margin-top: 2rem;
 }

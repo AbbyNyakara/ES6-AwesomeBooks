@@ -1,65 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
     <title>Awesome Books</title>
-</head>
-<body>
-    <main>
-        <!-- header-section  -->
-        <nav class="navbar">
-            <ul>
-                <li class="logo">Awesome Books</li>
-                <li ><a href="#books" class="book-link">List</a></li>
-                <li><a href="#form" class="form-link">Add new</a></li>
-                <li><a href="#contact"  class="contact-link">contact</a></li>
-            </ul>
-        </nav>
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul class="nav-container">
+        <li class="logo-container">
+          <a class="nav logo" href="#">Awesome Books</a>
+        </li>
+        <li class="list"><a class="nav" href="#">List</a></li>
+        <li class="add-new"><a class="nav" href="#">Add new</a></li>
+        <li class="contact"><a class="nav" href="#">Contact</a></li>
+      </ul>
+    </nav>
 
-        <!-- Current Date Section -->
-        <!-- Generate Dynamically -->
-        <section class="date"></section>
+    <p class="date">date</p>
 
-        <!-- Main heading  -->
-        <h1 class="main-heading">All Awesome Books</h1>
+    <h1 class="heading" id="heading">All awesome books</h1>
 
-        <!-- Logged books section to be created dynamically -->
-        <article class="logged-books hide" id="books"></article>
+    <article class="registered_books"></article>
 
-        <!-- Form Section -->
-        <form action="#" class="form" id="form">
-            <h3>Add a new Book</h3>
-            <input class="title-input" type="text" placeholder="Title" name="title">
-            <br>
-            <input class="author-input" type="text" placeholder="Author" name="author">
-            <br>
-            <button class="add-book" type="submit">Add Book</button>
-        </form>
+    <form action="#" class="add-form">
+      <input id="title" class="title_input" type="text" placeholder="Title" />
+      <br />
+      <input class="author_input" type="text" placeholder="Author" />
+      <br />
+      <button type="submit" class="add-book">Add</button>
+    </form>
 
-        <!-- Contact info Section -->
-        <section class="contact hide" id="contact">
-            <h2>Contact Information</h2>
-            <p>Do you have any questions or just want to say "Hello"? <br> You can reachout to us </p>
-            <ul>
-                <li>Our email: mail@mail.com</li>
-                <li>Our phone number: 00423589632445</li>
-                <li>Our address: Wambera street 22, 334 Nairobi City</li>
-            </ul>
-        </section>
+    <article class="contact-info">
+      <h2>Do you have any questions or you just wanna say "Hello"?</h2>
+      <h3>You can reach out to us!</h3>
+      <ul class="contact-info-container">
+        <li class="info-item">Our e-mail: awesomebooks@gmail.com</li>
+        <li class="info-item">Our phone number: +445878966325</li>
+        <li class="info-item">Our address: 44 Nairobi Avenue</li>
+      </ul>
+    </article>
 
-        <!-- Copyright/Footer Section -->
-        <footer>
-            <p>&copy; 2022 Amara Designs</p>
-        </footer>
+    <footer class="contact-footer footer">
+      <h6>&copy; Copyright 2022</h6>
+    </footer>
 
-    </main>
-    
-    <script type="module" src="index.js"></script>
-</body>
+    <script src="./index.js" type="module"></script>
+  </body>
 </html>

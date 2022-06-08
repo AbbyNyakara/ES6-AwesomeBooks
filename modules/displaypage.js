@@ -1,29 +1,51 @@
-import { loggedBooks, contact, form } from './Showbooks.js';
+import BookClass from "./bookClass.js";
 
-const bookLink = document.querySelector('nav ul li .book-link');
-const formLink = document.querySelector('nav ul li .form-link');
-const contactLink = document.querySelector('nav ul li .contact-link');
+const title = document.querySelector('.title_input');
+const author = document.querySelector('.author_input');
+const registeredBooks = document.querySelector('.registered_books');
+const addbook = document.querySelector('.add-book ');
 
-const displayPages = () => {
-  formLink.addEventListener('click', () => {
-    loggedBooks.style.display = 'none';
-    form.style.display = 'grid';
-    contact.style.display = 'none';
-  });
+let books = [];
 
-  bookLink.addEventListener('click', () => {
-    loggedBooks.classList.remove('hide');
-    form.style.display = 'none';
-    loggedBooks.style.display = 'block';
-    contact.style.display = 'none';
-  });
+const displayPage = () => {
+  const book = new BookClass();
+  registeredBooks.innerHTML = '';
+  if (localStorage.getItem('books')) {
+    books = JSON.parse(localStorage.getItem('books'));
+  }
+  const removeBook = (index) => {
+    book.removeBook(index, books);
+  };
+  for (let i = 0; i < books.length; i += 1) {
+    const bookDiv = document.createElement('div');
+    const bookTitle = document.createElement('p');
+    const removeBookBtn = document.createElement('button');
+    bookDiv.className = 'container';
+    removeBookBtn.className = 'button';
+    bookTitle.textContent = `${books[i].title} by ${books[i].author}`;
+    bookTitle.classList.add('title');
+    removeBookBtn.textContent = 'remove';
+    removeBookBtn.classList.add('button');
 
-  contactLink.addEventListener('click', () => {
-    contact.style.display = 'grid';
-    contact.classList.remove('hide');
-    form.style.display = 'none';
-    loggedBooks.style.display = 'none';
-  });
+    bookDiv.append(bookTitle, removeBookBtn);
+    registeredBooks.appendChild(bookDiv);
+    removeBookBtn.addEventListener('click', () => {
+      bookDiv.remove();
+      removeBook(i);
+    });
+  }
 };
 
-export default displayPages;
+addbook.addEventListener('click', () => {
+  const book = new BookClass(title.value, author.value);
+  book.addbook(book, books);
+  displayPage();
+  title.value = '';
+  author.value = '';
+});
+
+window.onload = () => {
+  displayPage();
+};
+
+export default displayPage;
